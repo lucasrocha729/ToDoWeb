@@ -1,11 +1,36 @@
-<div>
-  <label for="Name">Título tarefa</label>
-  <input type="text" name="Name" [(ngModel)] = "toDoName" />
-</div>
-<div>
-  <label for="description">Descrição</label>
-  <input type="text" name="description" [(ngModel)] = "description" />
-</div>
-<button (click)="createToDo()">Criar tarefa</button>
+<form class="form-create-todo">
+
+  <mat-form-field appearance="outline">
+    <mat-label >Nome </mat-label>
+    <input matInput name="Name" [(ngModel)] = "toDoName">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Descrição</mat-label>
+    <input matInput name="description" [(ngModel)] = "description">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Data</mat-label>
+    <input matInput name="toDoDate" [(ngModel)] = "toDoDate">
+  </mat-form-field>
+
+
+  <mat-form-field appearance="outline">
+    <mat-label >Status</mat-label>
+    <mat-select >
+      <mat-option value="one">Em andamento</mat-option>
+      <mat-option value="two">Finalizada</mat-option>
+      <mat-option value="two">Abandonada</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Anotações da atividade</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+
+  <button class="button" (click)="createToDo()">Criar</button>
+</form>
 
 

@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Zilla Slab", serif;
+  src: url("./fonts/ZillaSlab-Light.ttf");
+}
 
 html,
 body {
@@ -6,9 +10,13 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 a {
   text-decoration: none;
   color: black;
+}
+
+* {
+  font-family: "ZillaSlab-Light";
+  font-size: 18px;
 }

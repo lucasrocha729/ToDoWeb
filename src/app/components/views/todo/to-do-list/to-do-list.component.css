@@ -1,4 +1,21 @@
 table {
   width: calc(100% - 80px);
+  margin: 0px 40px 40px 40px;
+}
+
+.table {
+  display: flex;
+  justify-content: space-between;
+}
+.submenu-todo {
+  display: flex;
   margin: 40px;
+  justify-content: flex-end;
+}
+
+.new-task {
+  font-size: 18px;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #ffa000;
 }

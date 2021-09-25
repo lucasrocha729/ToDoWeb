@@ -1,5 +1,6 @@
 .toolbar {
   display: flex;
+  position: relative;
   justify-content: center;
   background-color: #ff8f00;
 }
@@ -11,4 +12,9 @@
 
 .menu-itens {
   padding: 20px;
+}
+
+mat-icon {
+  position: absolute;
+  bottom: 20px;
 }

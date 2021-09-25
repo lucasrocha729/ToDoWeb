@@ -11,6 +11,8 @@ import { ToDoService } from "src/app/services/to-do.service";
 export class ToDoCreateComponent implements OnInit {
   toDoName!: string;
   description!: string;
+  toDoDate!: string;
+  toDoStatus!: string;
 
   constructor(private toDoService: ToDoService, private router: Router) {}
 
@@ -20,6 +22,8 @@ export class ToDoCreateComponent implements OnInit {
     let toDo: ToDo = {
       toDoName: this.toDoName,
       description: this.description,
+      toDoDate: this.toDoDate,
+      toDoStatus: this.toDoStatus,
     };
     this.toDoService.createToDo(toDo).subscribe(() => {
       this.router.navigate(["/todo/list"]);

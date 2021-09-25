@@ -3,5 +3,6 @@ export default interface ToDo {
   toDoName: string;
   description: string;
   toDoDate?: string;
+  toDoStatus?: string;
   creationDate?: string;
 }
