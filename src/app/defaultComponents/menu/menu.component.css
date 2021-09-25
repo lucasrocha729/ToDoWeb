@@ -1,0 +1,14 @@
+.toolbar {
+  display: flex;
+  justify-content: center;
+  background-color: #ff8f00;
+}
+
+.home-icon {
+  position: absolute;
+  left: 20px;
+}
+
+.menu-itens {
+  padding: 20px;
+}
