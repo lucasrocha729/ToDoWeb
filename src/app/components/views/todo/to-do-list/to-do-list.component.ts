@@ -9,14 +9,14 @@ import { ToDoService } from "src/app/services/to-do.service";
 })
 export class ToDoListComponent implements OnInit {
   toDoList: ToDo[] = [];
+  dataTodo: ToDo[] = [];
   constructor(private toDoService: ToDoService) {}
 
   ngOnInit(): void {
     this.toDoService.listAllToDo().subscribe((toDo) => {
       this.toDoList = toDo;
-      console.log(this.toDoList);
+      this.dataTodo = this.toDoList;
     });
   }
-  displayedColumns: string[] = ["toDoName", "description"];
-  dataTodo = this.toDoList;
+  displayedColumns: string[] = ["toDoName", "description", "toDoDate"];
 }
