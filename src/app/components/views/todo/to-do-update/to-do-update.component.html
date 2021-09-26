@@ -1,1 +1,10 @@
-<p>to-do-update works!</p>
+<form class="form-create-todo">
+  <input type="text" name="toDoName" [(ngModel)]="toDoForEdit.toDoName" >
+  <input type="text" name="description" [(ngModel)]="toDoForEdit.description" >
+  <input type="text" name="toDoDate" [(ngModel)]="toDoForEdit.toDoDate" >
+  <input type="text" name="toDoStatus" [(ngModel)]="toDoForEdit.toDoStatus" >
+  <button (click)="updateToDo()">Editar</button>
+</form>
+
+
+

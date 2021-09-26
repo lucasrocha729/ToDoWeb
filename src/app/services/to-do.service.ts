@@ -7,15 +7,26 @@ import ToDo from "../models/ToDo";
   providedIn: "root",
 })
 export class ToDoService {
-  private BASE_URL = "https://localhost:5001/api";
+  private BASE_URL = "https://localhost:5001/api/todo";
 
   constructor(private httpClient: HttpClient) {}
 
   createToDo(toDo: ToDo): Observable<ToDo> {
-    return this.httpClient.post<ToDo>(`${this.BASE_URL}/todo/create`, toDo);
+    return this.httpClient.post<ToDo>(`${this.BASE_URL}/create`, toDo);
   }
 
   listAllToDo(): Observable<ToDo[]> {
-    return this.httpClient.get<ToDo[]>(`${this.BASE_URL}/todo/list`);
+    return this.httpClient.get<ToDo[]>(`${this.BASE_URL}/list`);
+  }
+
+  getById(id: number): Observable<ToDo> {
+    return this.httpClient.get<ToDo>(`${this.BASE_URL}/getById/${id}`);
+  }
+
+  updateToDo(toDo: ToDo): Observable<ToDo> {
+    return this.httpClient.put<ToDo>(
+      `${this.BASE_URL}/update/${toDo.id}`,
+      toDo
+    );
   }
 }
