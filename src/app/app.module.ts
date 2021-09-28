@@ -14,10 +14,11 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 
 import { AppComponent } from "./app.component";
-import { ToDoListComponent } from "./components/views/todo/to-do-list/to-do-list.component";
-import { ToDoCreateComponent } from "./components/views/todo/to-do-create/to-do-create.component";
-import { ToDoUpdateComponent } from "./components/views/todo/to-do-update/to-do-update.component";
+import { ToDoListComponent } from "./components/todo/to-do-list/to-do-list.component";
+import { ToDoCreateComponent } from "./components/todo/to-do-create/to-do-create.component";
+import { ToDoUpdateComponent } from "./components/todo/to-do-update/to-do-update.component";
 import { MenuComponent } from "./defaultComponents/menu/menu.component";
+import { CreateCategoryComponent } from "./components/category/create-category/create-category.component";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MenuComponent } from "./defaultComponents/menu/menu.component";
     ToDoCreateComponent,
     ToDoUpdateComponent,
     MenuComponent,
+    CreateCategoryComponent,
   ],
   imports: [
     BrowserModule,

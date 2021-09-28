@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.form-create-category,
+.form-edit-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  background-color: #ffa000;
+  border-radius: 8px;
+  max-width: 286px;
+  max-height: 148px;
+}
+
+.button {
+  font-size: 18px;
+  border-radius: 8px;
+  padding: 5px 30px 5px 30px;
+  background-color: #ffc107;
+  border: none;
+  margin: 20px 0 20px 0;
+
+  cursor: pointer;
+}
+.categories {
+  padding-right: 50px;
+  overflow: hidden;
+  max-width: 60px;
+}
+.icon {
+  margin-left: 20px;
+}
+
+.deleteCategoryButton {
+  border-radius: 8px;
+  padding: 5px 10px 5px 10px;
+  background-color: #ffc107;
+  border: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  width: 80px;
+}
+
+.editCategory {
+  background-color: #ffd740;
+  border-radius: 8px;
+  padding: 5px 15px 5px 15px;
+  border: none;
+  margin: 15px 0 15px 10px;
+  cursor: pointer;
+}
+
+label {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+input {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+input:focus {
+  outline-style: none;
+}
+.table {
+  margin-top: 80px;
+  width: 400px;
+}

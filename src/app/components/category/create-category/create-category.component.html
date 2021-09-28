@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="table">
+    <table mat-table [dataSource]="dataCategory" class="mat-elevation-z8">
+      <ng-container matColumnDef="categoryName">
+        <th mat-header-cell *matHeaderCellDef>Categoria</th>
+        <td class="categories" mat-cell *matCellDef="let element">
+          {{ element.categoryName }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="categoryEdit">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-icon class="icon" aria-hidden="false">edit</mat-icon>
+        </th>
+        <td class="categories" mat-cell *matCellDef="let element">
+          <button class="editCategory" (click)="categoryForEdit(element)">
+            Editar
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="categoryDelete">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-icon class="icon" aria-hidden="false">delete</mat-icon>
+        </th>
+        <td class="categories" mat-cell *matCellDef="let element">
+          <button
+            class="deleteCategoryButton"
+            (click)="deleteCategory(element.id)"
+          >
+            Deletar
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let dataSource; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <div class="middle-container">
+    <form class="form-create-category">
+      <label for="name">Nome da Categoria</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="categoryToCreate.categoryName"
+      />
+
+      <button (click)="createCategory()" class="button">Criar</button>
+    </form>
+
+    <form class="form-edit-category" *ngIf="edit">
+      <label for="name">Editar categoria</label>
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="categoryToEdit.categoryName"
+      />
+      <button (click)="editCategory(categoryToEdit)" class="button">
+        Confirmar
+      </button>
+    </form>
+  </div>
+</div>
