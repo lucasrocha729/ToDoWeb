@@ -9,23 +9,14 @@ import { ToDoService } from "src/app/services/to-do.service";
   styleUrls: ["./to-do-create.component.css"],
 })
 export class ToDoCreateComponent implements OnInit {
-  toDoName!: string;
-  description!: string;
-  toDoDate!: string;
-  toDoStatus!: string;
+  toDoCreate: ToDo = { description: "", toDoName: "" };
 
   constructor(private toDoService: ToDoService, private router: Router) {}
 
   ngOnInit(): void {}
 
   createToDo(): void {
-    let toDo: ToDo = {
-      toDoName: this.toDoName,
-      description: this.description,
-      toDoDate: this.toDoDate,
-      toDoStatus: this.toDoStatus,
-    };
-    this.toDoService.createToDo(toDo).subscribe(() => {
+    this.toDoService.createToDo(this.toDoCreate).subscribe(() => {
       this.router.navigate(["/todo/list"]);
     });
   }

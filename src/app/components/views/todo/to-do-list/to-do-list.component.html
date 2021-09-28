@@ -5,34 +5,39 @@
   <table mat-table [dataSource]="dataTodo" class="mat-elevation-z8">
 
     <ng-container matColumnDef="toDoName">
-      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
       <td mat-cell *matCellDef="let element"> {{element.toDoName}} </td>
     </ng-container>
 
     <ng-container matColumnDef="description">
-      <th mat-header-cell *matHeaderCellDef> Descrição </th>
+      <th mat-header-cell *matHeaderCellDef>Descrição</th>
       <td mat-cell *matCellDef="let element"> {{element.description}} </td>
     </ng-container>
 
     <ng-container matColumnDef="toDoDate">
-      <th mat-header-cell *matHeaderCellDef> Data </th>
-      <td mat-cell *matCellDef="let element"> {{element.toDoDate}} </td>
+      <th mat-header-cell *matHeaderCellDef>Data</th>
+      <td mat-cell *matCellDef="let element"> {{element.toDoDate | date:'medium'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="toDoStatus">
-      <th mat-header-cell *matHeaderCellDef> Status </th>
-      <td mat-cell *matCellDef="let element"> {{element.toDoDate}} </td>
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element"> {{element.toDoStatus}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="toDoCategory">
+      <th mat-header-cell *matHeaderCellDef>Categoria</th>
+      <td mat-cell *matCellDef="let element"> {{element.toDoCategory}} </td>
     </ng-container>
 
     <ng-container matColumnDef="toDoEdit">
-      <th mat-header-cell *matHeaderCellDef> <mat-icon  class="home-icon" aria-hidden="false">edit</mat-icon> </th>
-      <td mat-cell *matCellDef="let element"><a [routerLink]="['/todo/update/', element.id]">Editar</a></td>
+      <th mat-header-cell *matHeaderCellDef> <mat-icon class="icon" aria-hidden="false">edit</mat-icon> </th>
+      <td mat-cell *matCellDef="let element"><a class="edit" [routerLink]="['/todo/update/', element.id]">Editar</a></td>
     </ng-container>
 
     <ng-container matColumnDef="toDoDelete">
-      <th mat-header-cell *matHeaderCellDef> <mat-icon class="home-icon" aria-hidden="false">delete</mat-icon> </th>
+      <th mat-header-cell *matHeaderCellDef> <mat-icon class="icon" aria-hidden="false">delete</mat-icon> </th>
       <td mat-cell *matCellDef="let element">
-      <a >Deletar</a></td>
+      <button class="deleteToDoButton" (click)="toDoDelete(element.id)">Deletar</button></td>
     </ng-container>
 
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MatTableDataSource } from "@angular/material/table";
+import { ActivatedRoute, Router } from "@angular/router";
 import ToDo from "src/app/models/ToDo";
 import { ToDoService } from "src/app/services/to-do.service";
 @Component({
@@ -16,9 +17,18 @@ export class ToDoListComponent implements OnInit {
       this.dataTodo = toDo;
     });
   }
+
+  toDoDelete(id: number): void {
+    console.log(typeof id);
+    this.toDoService.deleteToDo(id).subscribe(() => {
+      window.location.reload();
+    });
+  }
+
   displayedColumns: string[] = [
     "toDoName",
     "description",
+    "toDoCategory",
     "toDoDate",
     "toDoStatus",
     "toDoEdit",

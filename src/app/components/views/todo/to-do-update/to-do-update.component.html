@@ -1,10 +1,28 @@
-<form class="form-create-todo">
-  <input type="text" name="toDoName" [(ngModel)]="toDoForEdit.toDoName" >
-  <input type="text" name="description" [(ngModel)]="toDoForEdit.description" >
-  <input type="text" name="toDoDate" [(ngModel)]="toDoForEdit.toDoDate" >
-  <input type="text" name="toDoStatus" [(ngModel)]="toDoForEdit.toDoStatus" >
-  <button (click)="updateToDo()">Editar</button>
-</form>
+<div class="container">
+
+  <form class="form-update-todo">
+
+    <label for="name">Nome da Tarefa</label>
+    <input type="text" name="name" [(ngModel)]="toDoForEdit.toDoName"/>
+
+    <label for="category">Categoria</label>
+    <input type="text" name="category" [(ngModel)]="toDoForEdit.toDoCategory"/>
+
+    <label for="toDoDate">Data</label>
+    <input type="datetime-local" name="toDoDate" [(ngModel)]="toDoForEdit.toDoDate"/>
+
+    <label for="status">Status</label>
+    <select name="status" [(ngModel)] = "toDoForEdit.toDoStatus">
+      <option value="Em andamento">Em andamento</option>
+      <option value="Finalizada">Finalizada</option>
+      <option value="Abandonada">Abandonada</option>
+    </select>
+
+    <label for="description">Descrição</label>
+    <textarea class="description" type="text" name="description" [(ngModel)]="toDoForEdit.description"></textarea>
+    <button class="button" (click)="updateToDo()">Criar</button>
+  </form>
+</div>
 
 
 

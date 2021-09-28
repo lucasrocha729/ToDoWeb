@@ -1,6 +1,7 @@
 table {
   width: calc(100% - 80px);
   margin: 0px 40px 40px 40px;
+  text-align: start;
 }
 
 .table {
@@ -18,4 +19,33 @@ table {
   border-radius: 8px;
   padding: 10px;
   background-color: #ffa000;
+}
+
+.deleteToDoButton {
+  border-radius: 8px;
+  padding: 5px 10px 5px 10px;
+  background-color: #ffc107;
+  border: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  width: 80px;
+}
+
+.edit {
+  background-color: #ffd740;
+  border-radius: 8px;
+  padding: 5px 15px 5px 15px;
+  border: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.icon {
+  padding-left: 20px;
+}
+
+td {
+  max-width: 100px;
+  overflow: hidden;
 }

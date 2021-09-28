@@ -29,4 +29,8 @@ export class ToDoService {
       toDo
     );
   }
+
+  deleteToDo(id: number): Observable<ToDo> {
+    return this.httpClient.delete<ToDo>(`${this.BASE_URL}/delete/${id}`);
+  }
 }

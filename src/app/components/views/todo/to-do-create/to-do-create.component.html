@@ -1,36 +1,28 @@
-<form class="form-create-todo">
+<div class="container">
 
-  <mat-form-field appearance="outline">
-    <mat-label >Nome </mat-label>
-    <input matInput name="Name" [(ngModel)] = "toDoName">
-  </mat-form-field>
+  <form class="form-create-todo">
 
-  <mat-form-field appearance="outline">
-    <mat-label>Descrição</mat-label>
-    <input matInput name="description" [(ngModel)] = "description">
-  </mat-form-field>
+    <label for="name">Nome da Tarefa</label>
+    <input type="text" name="name" [(ngModel)] = "toDoCreate.toDoName">
 
-  <mat-form-field appearance="outline">
-    <mat-label>Data</mat-label>
-    <input matInput name="toDoDate" [(ngModel)] = "toDoDate">
-  </mat-form-field>
+    <label for="category">Categoria</label>
+    <input type="text" name="category" [(ngModel)] = "toDoCreate.toDoCategory"/>
 
+    <label for="toDoDate">Data</label>
+    <input type="datetime-local" name="toDoDate" [(ngModel)] = "toDoCreate.toDoDate"/>
 
-  <mat-form-field appearance="outline">
-    <mat-label >Status</mat-label>
-    <mat-select >
-      <mat-option value="one">Em andamento</mat-option>
-      <mat-option value="two">Finalizada</mat-option>
-      <mat-option value="two">Abandonada</mat-option>
-    </mat-select>
-  </mat-form-field>
+    <label for="status">Status</label>
+    <select name="status" [(ngModel)] = "toDoCreate.toDoStatus">
+      <option value="Em andamento">Em andamento</option>
+      <option value="Finalizada">Finalizada</option>
+      <option value="Abandonada">Abandonada</option>
+    </select>
 
-  <mat-form-field appearance="outline">
-    <mat-label>Anotações da atividade</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
+    <label for="description">Descrição</label>
+    <textarea class="description" type="text" name="description" [(ngModel)] = "toDoCreate.description"></textarea>
 
-  <button class="button" (click)="createToDo()">Criar</button>
-</form>
+    <button type="submit" class="button" (click)="createToDo()">Criar</button>
+  </form>
+</div>
 
 
