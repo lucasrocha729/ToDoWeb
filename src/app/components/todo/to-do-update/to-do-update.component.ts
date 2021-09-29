@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import Category from "src/app/models/Category";
 import ToDo from "src/app/models/ToDo";
+import { CategoryService } from "src/app/services/category.service";
 import { ToDoService } from "src/app/services/to-do.service";
 
 @Component({
@@ -10,11 +12,13 @@ import { ToDoService } from "src/app/services/to-do.service";
 })
 export class ToDoUpdateComponent implements OnInit {
   toDoForEdit: ToDo = { toDoName: "", description: "" };
+  dataCategory: Category[] = [];
 
   constructor(
     private toDoService: ToDoService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private categoryService: CategoryService
   ) {}
 
   ngOnInit(): void {
@@ -29,6 +33,9 @@ export class ToDoUpdateComponent implements OnInit {
           console.log(toDo);
         });
       }
+    });
+    this.categoryService.listAllCategory().subscribe((category: any) => {
+      this.dataCategory = category["$values"];
     });
   }
   updateToDo(): void {

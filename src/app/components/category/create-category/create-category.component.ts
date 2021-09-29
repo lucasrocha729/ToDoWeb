@@ -17,8 +17,8 @@ export class CreateCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.edit = false;
-    this.categoryService.listAllCategory().subscribe((category) => {
-      this.dataCategory = category;
+    this.categoryService.listAllCategory().subscribe((category: any) => {
+      this.dataCategory = category["$values"];
     });
   }
 

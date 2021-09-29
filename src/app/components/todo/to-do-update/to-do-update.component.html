@@ -6,7 +6,9 @@
     <input type="text" name="name" [(ngModel)]="toDoForEdit.toDoName"/>
 
     <label for="category">Categoria</label>
-    <input type="text" name="category" [(ngModel)]="toDoForEdit.toDoCategory"/>
+    <select name="category" [(ngModel)] = "toDoForEdit.categoryId">
+      <option *ngFor="let category of dataCategory" [ngValue] = "category.id">{{category.categoryName}}</option>
+    </select>
 
     <label for="toDoDate">Data</label>
     <input type="datetime-local" name="toDoDate" [(ngModel)]="toDoForEdit.toDoDate"/>
