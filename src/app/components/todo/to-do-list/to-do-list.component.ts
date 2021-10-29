@@ -13,8 +13,8 @@ export class ToDoListComponent implements OnInit {
   constructor(private toDoService: ToDoService) {}
 
   ngOnInit(): void {
-    this.toDoService.listAllToDo().subscribe((toDo) => {
-      this.dataTodo = toDo;
+    this.toDoService.listAllToDo().subscribe((toDo:any) => {
+      this.dataTodo = toDo["$values"];
     });
   }
 
@@ -28,7 +28,7 @@ export class ToDoListComponent implements OnInit {
   displayedColumns: string[] = [
     "toDoName",
     "description",
-    "toDoCategory",
+    "category",
     "toDoDate",
     "toDoStatus",
     "toDoEdit",
