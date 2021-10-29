@@ -4,6 +4,7 @@ import { ToDoListComponent } from "./components/todo/to-do-list/to-do-list.compo
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CreateCategoryComponent } from "./components/category/create-category/create-category.component";
+import { CalendarComponent } from "./components/todo/calendar/calendar.component";
 
 const routes: Routes = [
   { path: "", component: ToDoListComponent },
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: "todo/create", component: ToDoCreateComponent },
   { path: "todo/update/:id", component: ToDoUpdateComponent },
   { path: "category", component: CreateCategoryComponent },
+  { path: "calendar", component: CalendarComponent },
 ];
 
 @NgModule({

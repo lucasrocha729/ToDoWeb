@@ -12,6 +12,10 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
 import { MatDatepickerModule } from "@angular/material/datepicker";
+import { FlatpickrModule } from "angularx-flatpickr";
+import { CalendarModule, DateAdapter } from "angular-calendar";
+import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap";
+import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 
 import { AppComponent } from "./app.component";
 import { ToDoListComponent } from "./components/todo/to-do-list/to-do-list.component";
@@ -19,6 +23,7 @@ import { ToDoCreateComponent } from "./components/todo/to-do-create/to-do-create
 import { ToDoUpdateComponent } from "./components/todo/to-do-update/to-do-update.component";
 import { MenuComponent } from "./defaultComponents/menu/menu.component";
 import { CreateCategoryComponent } from "./components/category/create-category/create-category.component";
+import { CalendarComponent } from "./components/todo/calendar/calendar.component";
 
 @NgModule({
   declarations: [
@@ -28,6 +33,7 @@ import { CreateCategoryComponent } from "./components/category/create-category/c
     ToDoUpdateComponent,
     MenuComponent,
     CreateCategoryComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +50,12 @@ import { CreateCategoryComponent } from "./components/category/create-category/c
     MatButtonModule,
     MatDatepickerModule,
     ReactiveFormsModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
