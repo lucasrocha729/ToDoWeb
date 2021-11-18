@@ -54,17 +54,16 @@ export class CalendarComponent {
   ngOnInit(): void {
     this.toDoService.listAllToDo().subscribe((toDo: any) => {
       this.dataTodo = toDo["$values"];
-    });
-
-    this.dataTodo.forEach((data) => {
-      this.events.push({
-        id: data.id,
-        start: data.toDoDate!,
-        end: addDays(new Date(), 1),
-        title: data.toDoName,
-        color: colors.red,
-        actions: this.actions,
-        allDay: data.allDay,
+      this.dataTodo.forEach((data) => {
+        this.events.push({
+          id: data.id,
+          start: data.toDoDate!,
+          end: addDays(new Date(), 1),
+          title: data.toDoName,
+          color: colors.red,
+          actions: this.actions,
+          allDay: data.allDay,
+        });
       });
     });
   }
