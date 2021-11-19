@@ -4,6 +4,7 @@ export default interface ToDo {
   toDoName: string;
   description: string;
   toDoDate?: Date;
+  toDoDateEnd?: Date;
   toDoStatus?: string;
   categoryId?: number;
   creationDate?: string;
