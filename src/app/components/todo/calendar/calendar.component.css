@@ -36,3 +36,7 @@ pre {
   margin: 5px;
   cursor: pointer;
 }
+
+.month {
+  padding-top: 30px;
+}

@@ -64,11 +64,10 @@ export class CalendarComponent {
           color: colors.red,
           actions: this.actions,
           allDay: data.allDay,
+          meta: data,
         });
       });
-      console.log(this.dataTodo);
     });
-    console.log(this.events);
   }
   @ViewChild("modalContent", { static: true }) modalContent:
     | TemplateRef<any>
@@ -144,27 +143,6 @@ export class CalendarComponent {
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
     this.modal.open(this.modalContent, { size: "lg" });
-  }
-
-  addEvent(): void {
-    this.events = [
-      ...this.events,
-      {
-        title: "New event",
-        start: startOfDay(new Date()),
-        end: endOfDay(new Date()),
-        color: colors.red,
-        draggable: true,
-        resizable: {
-          beforeStart: true,
-          afterEnd: true,
-        },
-      },
-    ];
-  }
-
-  deleteEvent(eventToDelete: CalendarEvent) {
-    this.events = this.events.filter((event) => event !== eventToDelete);
   }
 
   setView(view: CalendarView) {
