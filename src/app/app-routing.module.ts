@@ -7,12 +7,12 @@ import { CreateCategoryComponent } from "./components/category/create-category/c
 import { CalendarComponent } from "./components/todo/calendar/calendar.component";
 
 const routes: Routes = [
-  { path: "", component: ToDoListComponent },
+  { path: "", component: CalendarComponent },
   { path: "todo/list", component: ToDoListComponent },
   { path: "todo/create", component: ToDoCreateComponent },
   { path: "todo/update/:id", component: ToDoUpdateComponent },
   { path: "category", component: CreateCategoryComponent },
-  { path: "calendar", component: CalendarComponent },
+  { path: "todo/list", component: CalendarComponent },
 ];
 
 @NgModule({

@@ -1,30 +1,43 @@
 <div class="container">
-
   <form class="form-create-todo">
-
     <label for="name">Nome da Tarefa</label>
-    <input type="text" name="name" [(ngModel)] = "toDoCreate.toDoName">
+    <input type="text" name="name" [(ngModel)]="toDoCreate.toDoName" />
 
     <label for="category">Categoria</label>
-    <select name="category" [(ngModel)] = "toDoCreate.categoryId">
-      <option *ngFor="let category of dataCategory" [ngValue] = "category.id">{{category.categoryName}}</option>
+    <select name="category" [(ngModel)]="toDoCreate.categoryId">
+      <option *ngFor="let category of dataCategory" [ngValue]="category.id">
+        {{ category.categoryName }}
+      </option>
     </select>
 
     <label for="toDoDate">Data</label>
-    <input type="datetime-local" name="toDoDate" [(ngModel)] = "toDoCreate.toDoDate"/>
+    <input
+      type="datetime-local"
+      name="toDoDate"
+      [(ngModel)]="toDoCreate.toDoDate"
+    />
+    <label for="toDoDateEnd">Data</label>
+    <input
+      type="datetime-local"
+      name="toDoDateEnd"
+      [(ngModel)]="toDoCreate.toDoDateEnd"
+    />
 
     <label for="status">Status</label>
-    <select name="status" [(ngModel)] = "toDoCreate.toDoStatus">
+    <select name="status" [(ngModel)]="toDoCreate.toDoStatus">
       <option value="Em andamento">Em andamento</option>
       <option value="Finalizada">Finalizada</option>
       <option value="Abandonada">Abandonada</option>
     </select>
 
     <label for="description">Descrição</label>
-    <textarea class="description" type="text" name="description" [(ngModel)] = "toDoCreate.description"></textarea>
+    <textarea
+      class="description"
+      type="text"
+      name="description"
+      [(ngModel)]="toDoCreate.description"
+    ></textarea>
 
     <button type="submit" class="button" (click)="createToDo()">Criar</button>
   </form>
 </div>
-
-
