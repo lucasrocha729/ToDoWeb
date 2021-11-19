@@ -21,6 +21,7 @@ import {
   CalendarEventAction,
   CalendarEventTimesChangedEvent,
   CalendarView,
+  MOMENT,
 } from "angular-calendar";
 import { ToDoService } from "src/app/services/to-do.service";
 import ToDo from "src/app/models/ToDo";
@@ -57,15 +58,17 @@ export class CalendarComponent {
       this.dataTodo.forEach((data) => {
         this.events.push({
           id: data.id,
-          start: data.toDoDate!,
-          end: addDays(new Date(), 1),
+          start: new Date(data.toDoDate!),
+          end: new Date(data.toDoDateEnd!),
           title: data.toDoName,
           color: colors.red,
           actions: this.actions,
           allDay: data.allDay,
         });
       });
+      console.log(this.dataTodo);
     });
+    console.log(this.events);
   }
   @ViewChild("modalContent", { static: true }) modalContent:
     | TemplateRef<any>
