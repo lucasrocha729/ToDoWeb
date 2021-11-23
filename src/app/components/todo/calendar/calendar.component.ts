@@ -4,16 +4,7 @@ import {
   ViewChild,
   TemplateRef,
 } from "@angular/core";
-import {
-  startOfDay,
-  endOfDay,
-  subDays,
-  addDays,
-  endOfMonth,
-  isSameDay,
-  isSameMonth,
-  addHours,
-} from "date-fns";
+import { isSameDay, isSameMonth } from "date-fns";
 import { Subject } from "rxjs";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import {
@@ -27,17 +18,17 @@ import { ToDoService } from "src/app/services/to-do.service";
 import ToDo from "src/app/models/ToDo";
 
 const colors: any = {
-  red: {
-    primary: "#ad2121",
-    secondary: "#FAE3E3",
+  pink: {
+    primary: "#ffc1f3",
+    secondary: "#a30383",
   },
   blue: {
-    primary: "#1e90ff",
-    secondary: "#D1E8FF",
+    primary: "#f9f7d9",
+    secondary: "#f9f7d9",
   },
   yellow: {
-    primary: "#e3bc08",
-    secondary: "#FDF1BA",
+    primary: "#ffc1f3",
+    secondary: "#ffc1f3",
   },
 };
 @Component({
@@ -61,9 +52,8 @@ export class CalendarComponent {
           start: new Date(data.toDoDate!),
           end: new Date(data.toDoDateEnd!),
           title: data.toDoName,
-          color: colors.red,
+          color: colors.pink,
           actions: this.actions,
-          allDay: data.allDay,
           meta: data,
         });
       });
@@ -151,5 +141,12 @@ export class CalendarComponent {
 
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
+  }
+
+  toDoDelete(id: number): void {
+    console.log(typeof id);
+    this.toDoService.deleteToDo(id).subscribe(() => {
+      window.location.reload();
+    });
   }
 }

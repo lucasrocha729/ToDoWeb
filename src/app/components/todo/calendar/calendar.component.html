@@ -88,27 +88,34 @@
   </mwl-calendar-day-view>
 </div>
 
-<br /><br /><br />
+<br />
 
-<ng-template #modalContent let-close="close">
-  <div class="modal-header">
-    <button type="button" class="close" (click)="close()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div>
-      Tarefa
-      <p>{{ modalData?.event?.meta.id | json }}</p>
-      <p>{{ modalData?.event?.meta.toDoName | json }}</p>
-      <p>{{ modalData?.event?.meta.description | json }}</p>
-      <p>{{ modalData?.event?.meta.toDoStatus | json }}</p>
-      <p>{{ modalData?.event?.meta.category.categoryName | json }}</p>
+<div class="container-view">
+  <ng-template #modalContent let-close="close" class="all-open-tasks">
+    <div class="content-view">
+      <!-- <h3>Tarefa:</h3> -->
+      <!-- <p>{{ modalData?.event?.meta.id }}</p> -->
+      <p>Título: {{ modalData?.event?.meta.toDoName }}</p>
+      <p>Data inicial: {{ modalData?.event?.meta.toDoDate | date }}</p>
+      <p>Data Final: {{ modalData?.event?.meta.toDoDateEnd | date }}</p>
+      <p>Descrição: {{ modalData?.event?.meta.description }}</p>
+      <p>Status: {{ modalData?.event?.meta.toDoStatus }}</p>
+      <p>Categoria: {{ modalData?.event?.meta.category.categoryName }}</p>
+      <div>
+        <button type="button" class="close buttons" (click)="close()">
+          <mat-icon class="icon" aria-hidden="false">close</mat-icon>
+        </button>
+        <button
+          type="button"
+          class="buttons"
+          (click)="toDoDelete(modalData?.event?.meta.id)"
+        >
+          <mat-icon class="icon" aria-hidden="false">delete</mat-icon>
+        </button>
+        <a [routerLink]="['/todo/update/', modalData?.event?.meta.id]">
+          <mat-icon class="icon edit-icon" aria-hidden="false">edit</mat-icon>
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-secondary" (click)="close()">
-      OK
-    </button>
-  </div>
-</ng-template>
+  </ng-template>
+</div>
