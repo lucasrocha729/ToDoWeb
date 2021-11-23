@@ -10,13 +10,13 @@
       </option>
     </select>
 
-    <label for="toDoDate">Data</label>
+    <label for="toDoDate">Data inicial</label>
     <input
       type="datetime-local"
       name="toDoDate"
       [(ngModel)]="toDoCreate.toDoDate"
     />
-    <label for="toDoDateEnd">Data</label>
+    <label for="toDoDateEnd">Data final</label>
     <input
       type="datetime-local"
       name="toDoDateEnd"
@@ -25,6 +25,7 @@
 
     <label for="status">Status</label>
     <select name="status" [(ngModel)]="toDoCreate.toDoStatus">
+      <option value="A realizar">A realizar</option>
       <option value="Em andamento">Em andamento</option>
       <option value="Finalizada">Finalizada</option>
       <option value="Abandonada">Abandonada</option>
