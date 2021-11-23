@@ -150,10 +150,4 @@ export class CalendarComponent {
       window.location.reload();
     });
   }
-
-  editTodo() {
-    document
-      .getElementById("visibility")
-      ?.style?.setProperty("visibility", "hidden", "!important");
-  }
 }

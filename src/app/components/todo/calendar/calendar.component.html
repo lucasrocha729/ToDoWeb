@@ -54,6 +54,14 @@
       </div>
     </div>
   </div>
+  <div class="container-create-user">
+    <a routerLink="/todo/create" class="new-task">
+      <mat-icon class="icon addTodoIcon" aria-hidden="false">
+        add_circle_outline
+      </mat-icon>
+    </a>
+    <h3>Nova tarefa</h3>
+  </div>
 </div>
 <br />
 <div [ngSwitch]="view">
@@ -93,8 +101,6 @@
 <div class="container-view">
   <ng-template #modalContent let-close="close" class="all-open-tasks">
     <div class="content-view" id="visibility">
-      <!-- <h3>Tarefa:</h3> -->
-      <!-- <p>{{ modalData?.event?.meta.id }}</p> -->
       <p>Título: {{ modalData?.event?.meta.toDoName }}</p>
       <p>Data inicial: {{ modalData?.event?.meta.toDoDate | date }}</p>
       <p>Data Final: {{ modalData?.event?.meta.toDoDateEnd | date }}</p>
@@ -113,8 +119,8 @@
           <mat-icon class="icon" aria-hidden="false">delete</mat-icon>
         </button>
         <a
+          (click)="close()"
           [routerLink]="['/todo/update/', modalData?.event?.meta.id]"
-          (click)="editTodo()"
         >
           <mat-icon class="icon edit-icon" aria-hidden="false">edit</mat-icon>
         </a>

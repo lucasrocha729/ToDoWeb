@@ -81,3 +81,20 @@ pre {
   padding-left: 12px;
   padding-top: 6px;
 }
+
+.new-task {
+  padding-left: 45px;
+  padding-right: 10px;
+}
+
+.addTodoIcon {
+  align-items: baseline;
+}
+
+.container-create-user {
+  justify-content: end;
+  display: flex;
+  flex-direction: row;
+  padding-right: 50px;
+  cursor: pointer;
+}
