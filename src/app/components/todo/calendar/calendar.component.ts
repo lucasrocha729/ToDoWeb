@@ -40,13 +40,30 @@ const colors: any = {
 export class CalendarComponent {
   events: CalendarEvent[] = [];
   dataTodo: ToDo[] = [];
-
+  toDo: number = 0;
+  workInProgress: number = 0;
+  done: number = 0;
+  abandoned: number = 0;
   constructor(private toDoService: ToDoService, private modal: NgbModal) {}
 
   ngOnInit(): void {
     this.toDoService.listAllToDo().subscribe((toDo: any) => {
       this.dataTodo = toDo;
       this.dataTodo.forEach((data) => {
+        switch (data.toDoStatus?.toString()) {
+          case "A realizar":
+            this.toDo++;
+            break;
+          case "Em andamento":
+            this.workInProgress++;
+            break;
+          case "Finalizada":
+            this.done++;
+            break;
+          case "Abandonada":
+            this.abandoned++;
+        }
+
         this.events.push({
           id: data.id,
           start: new Date(data.toDoDate!),

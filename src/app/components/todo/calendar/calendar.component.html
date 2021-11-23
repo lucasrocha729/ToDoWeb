@@ -55,12 +55,20 @@
     </div>
   </div>
   <div class="container-create-user">
-    <a routerLink="/todo/create" class="new-task">
-      <mat-icon class="icon addTodoIcon" aria-hidden="false">
-        add_circle_outline
-      </mat-icon>
-    </a>
-    <h3>Nova tarefa</h3>
+    <div class="status-info">
+      <h3 id="status">A realizar: {{ toDo }}</h3>
+      <h3 id="status">Em andamento: {{ workInProgress }}</h3>
+      <h3 id="status">Finalizada: {{ done }}</h3>
+      <h3 id="status">Abandonada: {{ abandoned }}</h3>
+    </div>
+    <div class="create-user">
+      <a routerLink="/todo/create" class="new-task">
+        <mat-icon class="icon addTodoIcon" aria-hidden="false">
+          add_circle_outline
+        </mat-icon>
+      </a>
+      <h3>Nova tarefa</h3>
+    </div>
   </div>
 </div>
 <br />

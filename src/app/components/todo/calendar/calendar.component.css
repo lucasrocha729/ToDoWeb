@@ -92,9 +92,23 @@ pre {
 }
 
 .container-create-user {
-  justify-content: end;
+  justify-content: space-between;
   display: flex;
   flex-direction: row;
   padding-right: 50px;
   cursor: pointer;
+}
+
+.status-info {
+  display: flex;
+  flex-direction: row;
+}
+
+#status {
+  padding-left: 15px;
+}
+
+.create-user {
+  display: flex;
+  flex-direction: row;
 }
