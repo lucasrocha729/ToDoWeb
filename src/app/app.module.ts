@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { LOCALE_ID, NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
@@ -24,6 +24,9 @@ import { ToDoUpdateComponent } from "./components/todo/to-do-update/to-do-update
 import { MenuComponent } from "./defaultComponents/menu/menu.component";
 import { CreateCategoryComponent } from "./components/category/create-category/create-category.component";
 import { CalendarComponent } from "./components/todo/calendar/calendar.component";
+import { registerLocaleData } from "@angular/common";
+import ptBR from "@angular/common/locales/pt";
+registerLocaleData(ptBR);
 
 @NgModule({
   declarations: [
@@ -57,7 +60,7 @@ import { CalendarComponent } from "./components/todo/calendar/calendar.component
       useFactory: adapterFactory,
     }),
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: "pt" }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

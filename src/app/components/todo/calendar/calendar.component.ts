@@ -45,7 +45,7 @@ export class CalendarComponent {
 
   ngOnInit(): void {
     this.toDoService.listAllToDo().subscribe((toDo: any) => {
-      this.dataTodo = toDo["$values"];
+      this.dataTodo = toDo;
       this.dataTodo.forEach((data) => {
         this.events.push({
           id: data.id,
@@ -59,6 +59,7 @@ export class CalendarComponent {
       });
     });
   }
+
   @ViewChild("modalContent", { static: true }) modalContent:
     | TemplateRef<any>
     | undefined;
@@ -148,5 +149,11 @@ export class CalendarComponent {
     this.toDoService.deleteToDo(id).subscribe(() => {
       window.location.reload();
     });
+  }
+
+  editTodo() {
+    document
+      .getElementById("visibility")
+      ?.style?.setProperty("visibility", "hidden", "!important");
   }
 }

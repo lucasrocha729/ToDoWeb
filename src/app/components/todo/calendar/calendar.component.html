@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="col-md-4 month">
-      <h3>{{ viewDate | calendarDate: view + "ViewTitle":"en" }}</h3>
+      <h3>{{ viewDate | calendarDate: view + "ViewTitle":"pt" }}</h3>
     </div>
     <div class="col-md-4">
       <div class="btn-group contentLeft">
@@ -92,7 +92,7 @@
 
 <div class="container-view">
   <ng-template #modalContent let-close="close" class="all-open-tasks">
-    <div class="content-view">
+    <div class="content-view" id="visibility">
       <!-- <h3>Tarefa:</h3> -->
       <!-- <p>{{ modalData?.event?.meta.id }}</p> -->
       <p>Título: {{ modalData?.event?.meta.toDoName }}</p>
@@ -112,7 +112,10 @@
         >
           <mat-icon class="icon" aria-hidden="false">delete</mat-icon>
         </button>
-        <a [routerLink]="['/todo/update/', modalData?.event?.meta.id]">
+        <a
+          [routerLink]="['/todo/update/', modalData?.event?.meta.id]"
+          (click)="editTodo()"
+        >
           <mat-icon class="icon edit-icon" aria-hidden="false">edit</mat-icon>
         </a>
       </div>

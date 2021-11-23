@@ -37,7 +37,7 @@ export class ToDoUpdateComponent implements OnInit {
       }
     });
     this.categoryService.listAllCategory().subscribe((category: any) => {
-      this.dataCategory = category["$values"];
+      this.dataCategory = category;
     });
   }
   updateToDo(): void {

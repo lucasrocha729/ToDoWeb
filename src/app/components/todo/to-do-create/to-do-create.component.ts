@@ -22,7 +22,7 @@ export class ToDoCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryService.listAllCategory().subscribe((category: any) => {
-      this.dataCategory = category["$values"];
+      this.dataCategory = category;
     });
   }
 
