@@ -1,30 +1,46 @@
 <div class="container">
-
   <form class="form-update-todo">
-
     <label for="name">Nome da Tarefa</label>
-    <input type="text" name="name" [(ngModel)]="toDoForEdit.toDoName"/>
+    <input type="text" name="name" [(ngModel)]="toDoForEdit.toDoName" />
 
     <label for="category">Categoria</label>
-    <select name="category" [(ngModel)] = "toDoForEdit.categoryId">
-      <option *ngFor="let category of dataCategory" [ngValue] = "category.id">{{category.categoryName}}</option>
+    <select name="category" [(ngModel)]="toDoForEdit.categoryName">
+      <option
+        *ngFor="let category of dataCategory"
+        [ngValue]="toDoForEdit.categoryName"
+      >
+        {{ category.categoryName }}
+      </option>
     </select>
 
-    <label for="toDoDate">Data</label>
-    <input type="datetime-local" name="toDoDate" [(ngModel)]="toDoForEdit.toDoDate"/>
+    <label for="toDoDate">Data inicial</label>
+    <input
+      type="datetime-local"
+      name="toDoDate"
+      [(ngModel)]="toDoForEdit.toDoDate"
+    />
+    <label for="toDoDateEnd">Data final</label>
+    <input
+      type="datetime-local"
+      name="toDoDateEnd"
+      [(ngModel)]="toDoForEdit.toDoDateEnd"
+    />
 
     <label for="status">Status</label>
-    <select name="status" [(ngModel)] = "toDoForEdit.toDoStatus">
+    <select name="status" [(ngModel)]="toDoForEdit.toDoStatus">
+      <option value="A realizar">A realizar</option>
       <option value="Em andamento">Em andamento</option>
       <option value="Finalizada">Finalizada</option>
       <option value="Abandonada">Abandonada</option>
     </select>
 
     <label for="description">Descrição</label>
-    <textarea class="description" type="text" name="description" [(ngModel)]="toDoForEdit.description"></textarea>
-    <button class="button" (click)="updateToDo()">Criar</button>
+    <textarea
+      class="description"
+      type="text"
+      name="description"
+      [(ngModel)]="toDoForEdit.description"
+    ></textarea>
+    <button class="button" (click)="updateToDo()">Editar</button>
   </form>
 </div>
-
-
-

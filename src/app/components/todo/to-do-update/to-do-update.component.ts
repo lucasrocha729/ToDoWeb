@@ -28,9 +28,11 @@ export class ToDoUpdateComponent implements OnInit {
         this.toDoService.getById(this.toDoForEdit.id).subscribe((toDo) => {
           this.toDoForEdit.toDoName! = toDo.toDoName;
           this.toDoForEdit.description = toDo.description;
+          this.toDoForEdit.categoryName = toDo.categoryName;
           this.toDoForEdit.toDoDate = toDo.toDoDate;
+          this.toDoForEdit.toDoDateEnd = toDo.toDoDateEnd;
           this.toDoForEdit.toDoStatus = toDo.toDoStatus;
-          console.log(toDo);
+          this.toDoForEdit.categoryId = toDo.categoryId;
         });
       }
     });

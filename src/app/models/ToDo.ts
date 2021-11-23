@@ -7,7 +7,5 @@ export default interface ToDo {
   toDoDateEnd?: Date;
   toDoStatus?: string;
   categoryId?: number;
-  creationDate?: string;
-  category?: Category;
-  allDay?: boolean;
+  categoryName?: string;
 }
