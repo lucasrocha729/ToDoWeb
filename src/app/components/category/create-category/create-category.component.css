@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 80px;
-  background-color: #ffa000;
+  background-color: #ffc1f3;
   border-radius: 8px;
   max-width: 286px;
   max-height: 148px;
@@ -20,7 +20,7 @@
   font-size: 18px;
   border-radius: 8px;
   padding: 5px 30px 5px 30px;
-  background-color: #ffc107;
+  background-color: #ff74e3;
   border: none;
   margin: 20px 0 20px 0;
 
@@ -38,7 +38,7 @@
 .deleteCategoryButton {
   border-radius: 8px;
   padding: 5px 10px 5px 10px;
-  background-color: #ffc107;
+  background-color: #ff74e3;
   border: none;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -47,7 +47,7 @@
 }
 
 .editCategory {
-  background-color: #ffd740;
+  background-color: #ff74e3;
   border-radius: 8px;
   padding: 5px 15px 5px 15px;
   border: none;

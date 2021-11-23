@@ -18,13 +18,13 @@ table {
   font-size: 18px;
   border-radius: 8px;
   padding: 10px;
-  background-color: #ffa000;
+  background-color: #ff74e3;
 }
 
 .deleteToDoButton {
   border-radius: 8px;
   padding: 5px 10px 5px 10px;
-  background-color: #ffc107;
+  background-color: #ff74e3;
   border: none;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -33,7 +33,7 @@ table {
 }
 
 .edit {
-  background-color: #ffd740;
+  background-color: #ff74e3;
   border-radius: 8px;
   padding: 5px 15px 5px 15px;
   border: none;
