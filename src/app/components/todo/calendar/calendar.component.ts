@@ -93,17 +93,6 @@ export class CalendarComponent {
     });
   }
 
-  // events: CalendarEvent[] = [
-  //   {
-
-  //     allDay: true,
-  //   resizable: {
-  //     beforeStart: true,
-  //     afterEnd: true,
-  //   },
-  //   draggable: true,
-  // },
-  // ];
   @ViewChild("modalContent", { static: true }) modalContent:
     | TemplateRef<any>
     | undefined;
