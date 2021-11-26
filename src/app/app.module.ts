@@ -25,8 +25,8 @@ import { MenuComponent } from "./defaultComponents/menu/menu.component";
 import { CreateCategoryComponent } from "./components/category/create-category/create-category.component";
 import { CalendarComponent } from "./components/todo/calendar/calendar.component";
 import { registerLocaleData } from "@angular/common";
-import ptBR from "@angular/common/locales/pt";
-registerLocaleData(ptBR);
+// import ptBR from "@angular/common/locales/pt";
+// registerLocaleData(ptBR);
 
 @NgModule({
   declarations: [
@@ -60,7 +60,7 @@ registerLocaleData(ptBR);
       useFactory: adapterFactory,
     }),
   ],
-  providers: [{ provide: LOCALE_ID, useValue: "pt" }],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

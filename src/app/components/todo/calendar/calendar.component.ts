@@ -3,8 +3,17 @@ import {
   ChangeDetectionStrategy,
   ViewChild,
   TemplateRef,
+  ViewEncapsulation,
 } from "@angular/core";
-import { isSameDay, isSameMonth } from "date-fns";
+import {
+  addDays,
+  addHours,
+  endOfMonth,
+  isSameDay,
+  isSameMonth,
+  startOfDay,
+  subDays,
+} from "date-fns";
 import { Subject } from "rxjs";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import {
@@ -36,6 +45,7 @@ const colors: any = {
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ["./calendar.component.css"],
   templateUrl: "./calendar.component.html",
+  encapsulation: ViewEncapsulation.None,
 })
 export class CalendarComponent {
   events: CalendarEvent[] = [];
@@ -66,17 +76,34 @@ export class CalendarComponent {
 
         this.events.push({
           id: data.id,
-          start: new Date(data.toDoDate!),
-          end: new Date(data.toDoDateEnd!),
+          start: subDays(startOfDay(new Date(data.toDoDate!)), 1),
+          end: addDays(new Date(data.toDoDateEnd!), 1),
           title: data.toDoName,
           color: colors.pink,
           actions: this.actions,
           meta: data,
+          resizable: {
+            beforeStart: true,
+            afterEnd: true,
+          },
+          draggable: true,
         });
+        this.refresh.next();
       });
     });
   }
 
+  // events: CalendarEvent[] = [
+  //   {
+
+  //     allDay: true,
+  //   resizable: {
+  //     beforeStart: true,
+  //     afterEnd: true,
+  //   },
+  //   draggable: true,
+  // },
+  // ];
   @ViewChild("modalContent", { static: true }) modalContent:
     | TemplateRef<any>
     | undefined;
